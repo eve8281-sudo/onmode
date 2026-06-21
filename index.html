@@ -62,14 +62,14 @@
     margin:0; line-height:1; color:var(--title);
     font-family:var(--serif); font-weight:300;
     font-size:clamp(44px,14.5vw,70px);
-    letter-spacing:.16em; text-indent:.16em;
+    letter-spacing:.16em; text-indent:.16em; /* 補償字距尾端空白與側白邊，使可見字形置中 */
     white-space:nowrap;
   }
   .sub{
     margin-top:18px;
     font-family:var(--sans); font-weight:400;
     font-size:clamp(10px,2.7vw,12px);
-    letter-spacing:.46em; text-indent:.46em; color:var(--tan);
+    letter-spacing:.46em; text-indent:.23em; color:var(--tan);
   }
   .rule{ width:48px; height:1px; background:rgba(255,255,255,.2); margin:22px auto 0; }
 
