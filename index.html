@@ -3,190 +3,164 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<meta name="theme-color" content="#07070a" />
-<title>ONMODE｜男性生活選品</title>
-<meta name="description" content="ONMODE — 男性生活選品。跨進男性風格、選品與生活秩序。LINE / Instagram / TikTok" />
+<meta name="theme-color" content="#000000" />
+<title>ONMODE｜LIFE ON MODE</title>
+<meta name="description" content="ONMODE — LIFE ON MODE. Instagram / TikTok / LINE / Email." />
 
-<!-- 分享預覽 -->
-<meta property="og:title" content="ONMODE｜男性生活選品" />
-<meta property="og:description" content="WEAR THE MOOD — 跨進男性風格、選品與生活秩序。" />
+<meta property="og:title" content="ONMODE" />
+<meta property="og:description" content="LIFE ON MODE — Instagram · TikTok · LINE · Email" />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
 <style>
   /* =========================================================
-     ONMODE link page — 暗色男性質感
-     改文字 / 連結：找下方 <main> 區塊
-     換 logo 圖：把正方形圖命名 avatar.jpg 放同資料夾（否則用字標）
+     ONMODE link page — 暗色聚光 / 清單式
+     改文字 / 連結：找下方 <nav class="links"> 區塊
      ========================================================= */
   :root{
-    --bg:#08080a;
-    --ink:#f3f1ec;          /* 暖白 */
-    --muted:#8d8a83;        /* 次要灰 */
-    --faint:#5a5852;
-    --line:rgba(255,255,255,.12);
-    --line-soft:rgba(255,255,255,.07);
-    --card:rgba(255,255,255,.035);
-    --accent:#d33a2c;       /* 品牌紅，點綴用 */
+    --bg:#000;
+    --title:#f4f1ec;
+    --ink:#ece8e1;
+    --tan:#9c9183;          /* LIFE ON MODE 暖灰 */
+    --muted:#8a857d;        /* 斜體說明 */
+    --faint:#5b574f;        /* 版權/細線文字 */
+    --line:rgba(255,255,255,.08);
+    --icon:rgba(236,232,225,.82);
     --serif:"Cormorant Garamond",serif;
-    --serif-tc:"Noto Serif TC",serif;
-    --sans:"Inter","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   }
 
   *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-  html,body{ margin:0; padding:0; }
+  html,body{ margin:0; padding:0; background:var(--bg); }
   body{
     min-height:100svh;
     font-family:var(--sans);
     color:var(--ink);
     background:
-      radial-gradient(820px 460px at 50% -12%, rgba(255,255,255,.06), transparent 62%),
-      radial-gradient(720px 620px at 50% 118%, rgba(150,40,32,.12), transparent 60%),
-      var(--bg);
-    background-attachment:fixed;
-    display:flex; flex-direction:column; align-items:center;
-    padding:max(40px,env(safe-area-inset-top)) 22px max(34px,env(safe-area-inset-bottom));
+      radial-gradient(680px 360px at 50% 2%, rgba(232,226,214,.14), rgba(0,0,0,0) 60%),
+      radial-gradient(520px 300px at 50% 0%, rgba(255,252,245,.07), rgba(0,0,0,0) 58%),
+      #000;
+    display:flex; justify-content:center;
     -webkit-font-smoothing:antialiased;
-  }
-  /* 極淡顆粒質感 */
-  body::after{
-    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.04;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
   main{
-    position:relative; z-index:1;
-    width:100%; max-width:430px; margin:auto 0;
-    display:flex; flex-direction:column; align-items:center;
-    animation:fade .8s ease both;
+    width:100%; max-width:440px; min-height:100svh;
+    padding:0 30px;
+    padding-bottom:max(26px,env(safe-area-inset-bottom));
+    display:flex; flex-direction:column;
+    animation:fade .9s ease both;
   }
-  @keyframes fade{ from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;} }
+  @keyframes fade{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:none;} }
 
-  /* ---- Logo 字標（重現 ONMODE 圓形商標）---- */
-  .logo{
-    width:138px;height:138px;border-radius:50%;
-    border:1px solid var(--line);
-    background:
-      radial-gradient(circle at 50% 35%, rgba(255,255,255,.05), transparent 70%),
-      #050506;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    box-shadow:0 24px 60px -28px rgba(0,0,0,.9), inset 0 0 0 1px rgba(255,255,255,.02);
-    margin-bottom:22px; overflow:hidden;
+  /* ---- HERO ---- */
+  .hero{ text-align:center; padding-top:15svh; }
+  .wordmark{
+    margin:0; line-height:1; color:var(--title);
+    font-family:var(--serif); font-weight:300;
+    font-size:clamp(54px,18.5vw,84px);
+    letter-spacing:.08em; text-indent:.08em;
+    white-space:nowrap;
   }
-  .logo img{ width:100%;height:100%;object-fit:cover;border-radius:50%; display:none; }
-  .logo .brand{
-    font-family:var(--serif); font-weight:500; font-size:21px;
-    letter-spacing:.26em; text-indent:.26em; color:var(--ink); line-height:1;
+  .sub{
+    margin-top:20px;
+    font-family:var(--sans); font-weight:400;
+    font-size:clamp(11px,3vw,13px);
+    letter-spacing:.52em; text-indent:.52em; color:var(--tan);
   }
-  .logo .rule{ width:30px;height:1px;background:var(--line); margin:9px 0 8px; }
-  .logo .sub{
-    font-family:var(--sans); font-weight:500; font-size:8px;
-    letter-spacing:.42em; text-indent:.42em; color:var(--muted);
+  .rule{ width:46px; height:1px; background:rgba(255,255,255,.22); margin:24px auto 0; }
+
+  /* ---- LINKS ---- */
+  .links{ margin-top:auto; padding-top:8svh; display:flex; flex-direction:column; }
+
+  .row{
+    display:flex; align-items:center; gap:22px;
+    padding:23px 2px;
+    border-top:1px solid var(--line);
+    text-decoration:none; color:inherit;
+    transition:background .25s ease, padding-left .2s ease;
+  }
+  .row:last-child{ border-bottom:1px solid var(--line); }
+  .row:hover{ background:rgba(255,255,255,.022); padding-left:6px; }
+
+  .ic{ flex:0 0 30px; width:30px; height:30px; display:flex; align-items:center; justify-content:center; color:var(--icon); transition:color .25s ease; }
+  .ic svg{ width:26px; height:26px; }
+  .row:hover .ic{ color:#fff; }
+
+  .meta{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+  .t{
+    font-family:var(--sans); font-weight:400; font-size:16px;
+    letter-spacing:.17em; color:var(--ink);
+  }
+  .d{
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size:16px; color:var(--muted); letter-spacing:.01em; line-height:1;
   }
 
-  .name{ font-family:var(--serif); font-weight:500; font-size:23px; letter-spacing:.06em; margin:0 0 8px; }
-  .tagline{
-    font-family:var(--serif-tc); font-weight:300; color:var(--muted);
-    font-size:14.5px; letter-spacing:.05em; text-align:center; line-height:1.75; margin:0 0 14px;
+  footer{
+    margin-top:30px; padding:22px 0 8px; text-align:center;
+    font-family:var(--sans); font-weight:400;
+    font-size:clamp(8.5px,2.5vw,10px);
+    letter-spacing:.16em; color:var(--faint); white-space:nowrap;
   }
-  .mood{
-    font-family:var(--serif); font-weight:400; font-size:11px;
-    letter-spacing:.5em; text-indent:.5em; color:var(--faint);
-    padding-bottom:2px; margin:0 0 28px;
-    position:relative;
-  }
-  .mood::after{ content:""; position:absolute; left:50%; bottom:-9px; transform:translateX(-50%); width:26px; height:1px; background:var(--accent); opacity:.7; }
-
-  .links{ width:100%; display:flex; flex-direction:column; gap:12px; margin-top:6px; }
-
-  .btn{
-    --bc:rgba(255,255,255,.25);   /* hover 時的品牌色 */
-    position:relative; display:flex; align-items:center; gap:15px;
-    width:100%; padding:14px 16px 14px 15px;
-    text-decoration:none; color:var(--ink);
-    background:var(--card);
-    border:1px solid var(--line-soft);
-    border-radius:13px;
-    transition:transform .18s ease, border-color .25s ease, background .25s ease;
-  }
-  .btn:hover{ transform:translateY(-2px); background:rgba(255,255,255,.06); border-color:var(--bc); }
-  .btn:active{ transform:translateY(0); }
-
-  .icon{
-    flex:0 0 40px; width:40px;height:40px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    border:1px solid var(--line); color:var(--ink);
-    transition:color .25s ease, border-color .25s ease;
-  }
-  .icon svg{ width:20px;height:20px; fill:currentColor; }
-  .btn:hover .icon{ color:var(--bc); border-color:var(--bc); }
-  .btn.line   { --bc:#06C755; }
-  .btn.ig     { --bc:#e1306c; }
-  .btn.tiktok { --bc:#e8e8e8; }
-
-  .label{ display:flex;flex-direction:column; gap:2px; line-height:1.2; min-width:0; }
-  .label .t{ font-family:var(--sans); font-weight:500; font-size:15px; letter-spacing:.02em; }
-  .label .s{ font-size:12px; color:var(--muted); font-weight:400; letter-spacing:.03em; }
-
-  .arrow{ margin-left:auto; color:var(--faint); transition:transform .18s ease, color .25s ease; }
-  .btn:hover .arrow{ transform:translate(2px,-2px); color:var(--muted); }
-
-  footer{ position:relative; z-index:1; margin-top:34px; text-align:center; }
-  footer .cats{ font-family:var(--sans); font-size:10px; letter-spacing:.28em; color:var(--faint); }
-  footer .cr{ margin-top:12px; font-family:var(--serif); font-size:11px; letter-spacing:.3em; color:var(--faint); }
 </style>
 </head>
 <body>
   <main>
-    <!-- Logo：放 avatar.jpg 會自動顯示，否則用 ONMODE 字標 -->
-    <div class="logo">
-      <img src="avatar.jpg" alt="ONMODE"
-           onerror="this.remove();" onload="this.style.display='block'; this.parentNode.querySelectorAll('.brand,.rule,.sub').forEach(function(e){e.style.display='none'});" />
-      <div class="brand">ONMODE</div>
-      <div class="rule"></div>
+    <header class="hero">
+      <h1 class="wordmark">ONMODE</h1>
       <div class="sub">LIFE ON MODE</div>
-    </div>
-
-    <h1 class="name">onmode.life</h1>
-    <p class="tagline">男性生活選品<br/>跨進男性風格、選品與生活秩序</p>
-    <div class="mood">WEAR THE MOOD</div>
+      <div class="rule"></div>
+    </header>
 
     <nav class="links">
-      <!-- LINE -->
-      <a class="btn line" href="https://line.me/R/ti/p/@865gqymh" target="_blank" rel="noopener">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        </span>
-        <span class="label"><span class="t">加 LINE 好友</span><span class="s">@865gqymh</span></span>
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </a>
-
       <!-- Instagram -->
-      <a class="btn ig" href="https://www.instagram.com/onmode.life?igsh=MWw3cHo5cTd0MDMwNg%3D%3D&utm_source=qr" target="_blank" rel="noopener">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6362-.5546 2.9132-.059 1.2772-.0633 1.6856-.0572 4.9412.0062 3.2556.0163 3.6611.0717 4.9417.061 1.2767.264 2.1485.5635 2.9109.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.3793.7632.295 1.6361.4954 2.9131.5545 1.277.0591 1.6858.0633 4.9406.0572 3.2549-.0062 3.6618-.0163 4.942-.0708 1.2797-.0546 2.1487-.2664 2.9117-.5635.7889-.3086 1.4573-.72 2.1228-1.3881.6655-.6682 1.0741-1.3378 1.3784-2.1284.2954-.7632.4961-1.6362.5544-2.9128.0591-1.2808.0633-1.6898.0571-4.9452-.0062-3.2554-.0163-3.6606-.0717-4.9408-.0554-1.2802-.264-2.1488-.5635-2.9124-.3084-.7889-.72-1.4569-1.3877-2.1228C21.2926 1.396 20.6235.9873 19.8333.6827 19.0697.3873 18.1973.1864 16.9203.1283 15.6433.0701 15.2353.0659 11.9794.0721 8.7235.0783 8.3185.0824 7.0301.084m.1408 21.6982c-1.17-.0509-1.8051-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037-.0061-3.583.0492-4.848.0508-1.169.2464-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.4232-.1649 1.0577-.3618 2.2272-.4174 1.2655-.0596 1.6447-.072 4.848-.079 3.2033-.007 3.5835-.006 4.8495.0492 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1649.4218.3617 1.0563.4169 2.2252.0599 1.2645.0735 1.6442.079 4.848.0061 3.2033-.0063 3.5837-.0492 4.848-.0508 1.169-.2453 1.805-.408 2.2293-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3619-2.2262.4174-1.2656.0589-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0492M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0033a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0033"/></svg>
+      <a class="row" href="https://www.instagram.com/onmode.life?igsh=MWw3cHo5cTd0MDMwNg%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5.4"/>
+            <circle cx="12" cy="12" r="4.3"/>
+            <circle cx="17.6" cy="6.4" r="1.15" fill="currentColor" stroke="none"/>
+          </svg>
         </span>
-        <span class="label"><span class="t">Instagram</span><span class="s">@onmode.life</span></span>
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        <span class="meta"><span class="t">INSTAGRAM</span><span class="d">Follow our daily mood</span></span>
       </a>
 
       <!-- TikTok -->
-      <a class="btn tiktok" href="https://www.tiktok.com/@onmode2255?_r=1&_t=ZS-97L8PLMOcwZ" target="_blank" rel="noopener">
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      <a class="row" href="https://www.tiktok.com/@onmode2255?_r=1&_t=ZS-97L8PLMOcwZ" target="_blank" rel="noopener">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
         </span>
-        <span class="label"><span class="t">TikTok</span><span class="s">@onmode2255</span></span>
-        <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        <span class="meta"><span class="t">TIKTOK</span><span class="d">Watch the process</span></span>
+      </a>
+
+      <!-- LINE -->
+      <a class="row" href="https://line.me/R/ti/p/@865gqymh" target="_blank" rel="noopener">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.4c-4.7 0-8.5 3.04-8.5 6.8 0 3.37 3.02 6.19 7.1 6.72.28.06.66.18.76.42.08.22.05.55.03.77l-.12.74c-.03.22-.17.86.76.47 3.03-1.78 4.9-2.93 6.02-4.13C19.4 13.66 20.5 11.9 20.5 10.2c0-3.76-3.8-6.8-8.5-6.8z"/>
+            <path d="M7.6 9v3.1M7.6 12.1H9.3M11 9v3.1M12.7 9v3.1l1.9 0M16.3 9h-1.7v3.1h1.7M14.6 10.55h1.4"/>
+          </svg>
+        </span>
+        <span class="meta"><span class="t">OFFICIAL LINE</span><span class="d">Chat with us</span></span>
+      </a>
+
+      <!-- Email -->
+      <a class="row" href="mailto:onmode.life@gmail.com">
+        <span class="ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2.8" y="5" width="18.4" height="14" rx="2.4"/>
+            <path d="m3.6 7.2 8.4 6.1 8.4-6.1"/>
+          </svg>
+        </span>
+        <span class="meta"><span class="t">EMAIL CONTACT</span><span class="d">Let's work together</span></span>
       </a>
     </nav>
-  </main>
 
-  <footer>
-    <div class="cats">ACCESSORIES · FRAGRANCE · MENSWEAR · MOOD LIVING</div>
-    <div class="cr">© ONMODE</div>
-  </footer>
+    <footer>© 2025 ONMODE — ALL RIGHTS RESERVED</footer>
+  </main>
 </body>
 </html>
